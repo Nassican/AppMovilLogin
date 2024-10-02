@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AppMovilesNassican</string>
+    <string name="email">Correo</string>
+    <string name="password">Contraseña</string>
+    <string name="forgotPassword">Olvidaste tu contraseña?</string>
+    <string name="firstName">Nombre</string>
+    <string name="lastName">Apellido</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="createAct">Crear cuenta</string>
+    <string name="email_hint">Email</string>
+    <string name="send_password_reset">Enviar contraseña</string>
+</resources>
