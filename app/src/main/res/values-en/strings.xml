@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppMovilesNassican</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgotPassword">Forgot your password?</string>
+    <string name="firstName">Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="login">Login</string>
+    <string name="createAct">Create account</string>
+    <string name="email_hint">Email</string>
+    <string name="send_password_reset">Send password</string>
+    <string name="aboutme">Created by Jesus Benavides</string>
+    <string name="hometext">Welcome to the Ring</string>
+    <string name="signout">Close Session</string>
+</resources>

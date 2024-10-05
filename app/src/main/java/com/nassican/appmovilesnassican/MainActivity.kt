@@ -1,18 +1,23 @@
 package com.nassican.appmovilesnassican
 
+import android.Manifest
 import android.app.ProgressDialog
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "LoginActivity"
+    private val LOCATION_PERMISSION_REQUEST_CODE = 1
 
     // Global variables
     private lateinit var email: String
@@ -28,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initialise()
+
+        if (!hasLocationPermission()) {
+            requestLocationPermission()
+        }
+
+
     }
 
     // Initialize UI elements and Firebase authentication
@@ -36,6 +47,41 @@ class MainActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.etPassword)
         mProgressBar = ProgressDialog(this)
         mAuth = FirebaseAuth.getInstance()
+    }
+
+    private fun hasLocationPermission(): Boolean {
+        return ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
+    // Solicitar permisos de ubicación
+    private fun requestLocationPermission() {
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+            LOCATION_PERMISSION_REQUEST_CODE
+        )
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            LOCATION_PERMISSION_REQUEST_CODE -> {
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    // Permiso concedido, puedes proceder con la funcionalidad que requiere ubicación
+                } else {
+                    // Permiso denegado, maneja esto apropiadamente (por ejemplo, mostrando un mensaje al usuario)
+                    Toast.makeText(this, "Se requiere permiso de ubicación para algunas funciones", Toast.LENGTH_LONG).show()
+                }
+                return
+            }
+        }
     }
 
     // Login with Firebase

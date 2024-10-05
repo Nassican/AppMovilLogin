@@ -9,4 +9,7 @@
     <string name="createAct">Crear cuenta</string>
     <string name="email_hint">Email</string>
     <string name="send_password_reset">Enviar contraseña</string>
+    <string name="aboutme">Creado por Jesús Benavides</string>
+    <string name="hometext">Bienvenido al Anillo</string>
+    <string name="signout">Cerrar Sesión</string>
 </resources>

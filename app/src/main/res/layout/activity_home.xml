@@ -5,23 +5,57 @@
     android:padding="16dp"
     android:background="#FAFAFA">
 
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bienvenido a la HomeActivity"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"/>
 
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cerrar Sesión"
-        android:layout_below="@id/tvWelcome"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hometext"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"/>
+
+        <Button
+            android:id="@+id/btnGoogleMaps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Google Maps" />
+
+        <Button
+            android:id="@+id/btnOpenStreetMap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OpenStreetMap" />
+
+        <TextView
+            android:id="@+id/tvAboutMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aboutme"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signout"
+            android:layout_below="@id/tvWelcome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"/>
+
+    </LinearLayout>
+
 
 </RelativeLayout>

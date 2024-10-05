@@ -30,6 +30,16 @@ class HomeActivity : AppCompatActivity() {
             logout()
         }
 
+        findViewById<Button>(R.id.btnGoogleMaps).setOnClickListener {
+            val intent = Intent(this, GoogleMapsActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.btnOpenStreetMap).setOnClickListener {
+            val intent = Intent(this, OpenStreetMapActivity::class.java)
+            startActivity(intent)
+        }
+
         // Muestra el nombre del usuario (opcional)
         val currentUser = mAuth.currentUser
         if (currentUser != null) {
